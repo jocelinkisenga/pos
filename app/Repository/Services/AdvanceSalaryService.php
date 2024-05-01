@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace App\Repository\Services;
 
+use App\Models\AdvanceSalary;
+
 class AdvanceSalaryService {
 
     public function advanceSalaryByname(string $search) {
@@ -13,13 +15,13 @@ class AdvanceSalaryService {
 
     }
 
-    public function advancedSalaryWithEmploy(string $searchWords, $row) {
+    public function advancedSalaryWithEmployee(string $searchWords, $row) {
      return   AdvanceSalary::with(['employee'])
                 ->orderByDesc('date')
                 ->filter($searchWords)
                 ->sortable()
                 ->paginate($row)
-                ->appends(request()->query()
+                ->appends(request()->query());
     }
 
 

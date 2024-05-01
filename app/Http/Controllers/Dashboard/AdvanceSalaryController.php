@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\AdvanceSalary;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Repository\Services\AdvanceSalaryService;
 use Illuminate\Support\Facades\Redirect;
 
 class AdvanceSalaryController extends Controller
 {
+    public function __construct(public AdvanceSalaryService $advanceSalaryService){
+
+    }
     /**
      * Display a listing of the resource.
      */
@@ -22,18 +26,13 @@ class AdvanceSalaryController extends Controller
             abort(400, 'The per-page parameter must be an integer between 1 and 100.');
         }
 
-        if(request('search')){
-            Employee::firstWhere('name', request('search'));
-        }
+        // if(request('search')){
+        //     Employee::firstWhere('name', request('search'));
+        // }
 
-        //returns views with employ
         return view('advance-salary.index', [
-            'advance_salaries' => AdvanceSalary::with(['employee'])
-                ->orderByDesc('date')
-                ->filter(request(['search']))
-                ->sortable()
-                ->paginate($row)
-                ->appends(request()->query()),
+            'advance_salaries' => $this->advanceSalaryService
+                                        ->advancedSalaryWithEmployee(request(["search"]), $row),
         ]);
     }
 
