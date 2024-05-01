@@ -13,10 +13,10 @@ class AdvanceSalaryService {
 
     }
 
-    public function advancedSalaryWithEmploy() {
+    public function advancedSalaryWithEmploy(string $searchWords, $row) {
      return   AdvanceSalary::with(['employee'])
                 ->orderByDesc('date')
-                ->filter(request(['search']))
+                ->filter($searchWords)
                 ->sortable()
                 ->paginate($row)
                 ->appends(request()->query()
