@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('assets/vendor/remixicon/fonts/remixicon.css') }}">
 
         @yield('specificpagestyles')
+        @livewireStyles
     </head>
 <body>
     <!-- loader Start -->
@@ -35,7 +36,7 @@
     <!-- Wrapper End-->
 
     @include('dashboard.body.footer')
-
+@livewireScripts
     <!-- Backend Bundle JavaScript -->
     <script src="{{ asset('assets/js/backend-bundle.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/4c897dc313.js" crossorigin="anonymous"></script>

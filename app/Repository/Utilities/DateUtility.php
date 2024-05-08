@@ -11,7 +11,7 @@ class DateUtility {
        return Carbon::createFromFormat('Y-m-d', $newdate)->format('Y-m');
     }
 
-    public function oldDate(Adv){
+    public function oldDate($Adv){
 
     }
 }
