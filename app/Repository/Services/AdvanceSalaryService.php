@@ -6,9 +6,11 @@ use App\Models\AdvanceSalary;
 
 class AdvanceSalaryService {
 
-    public function advanceSalaryByname(string $search) {
+    public function advanceSalaryByIdAndDate( $advanceSalaryId, string $getYearMonth) {
 
-
+    return AdvanceSalary::where('employee_id', $advanceSalaryId)
+            ->whereDate('date', 'LIKE',  $getYearMonth . '%')
+            ->get();
     }
 
     public function advanceSalaryById(int $advancedId){
@@ -24,9 +26,13 @@ class AdvanceSalaryService {
                 ->appends(request()->query());
     }
 
-
-    public function advancedSalary() {
-
+    public function advanceSalaryCreate($data) : void {
+        AdvanceSalary::create(
+[
+        'employee_id' => $data->employee_id,
+        'date' => $data->date,
+        'advance_salary' => $data->advance_salary]
+        );
     }
 
 }

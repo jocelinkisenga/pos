@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\AdvanceSalary;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdvanceSalaryRequest;
 use App\Repository\Services\AdvanceSalaryService;
 use Illuminate\Support\Facades\Redirect;
 
 class AdvanceSalaryController extends Controller
 {
-    public function __construct(public AdvanceSalaryService $advanceSalaryService){
-
+    public function __construct(public AdvanceSalaryService $advanceSalaryService)
+    {
     }
     /**
      * Display a listing of the resource.
@@ -32,7 +33,7 @@ class AdvanceSalaryController extends Controller
 
         return view('advance-salary.index', [
             'advance_salaries' => $this->advanceSalaryService
-                                        ->advancedSalaryWithEmployee(request(["search"]), $row),
+                ->advancedSalaryWithEmployee(request(["search"]), $row),
         ]);
     }
 
@@ -49,29 +50,16 @@ class AdvanceSalaryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AdvanceSalaryRequest $request)
     {
-        $rules = [
-            'employee_id' => 'required',
-            'date' => 'required|date_format:Y-m-d|max:10',
-            'advance_salary' => 'numeric|nullable'
-        ];
 
         if ($request->date) {
             // format date only shows the year and month
             $getYm = Carbon::createFromFormat('Y-m-d', $request->date)->format('Y-m');
-        } else {
-            $validatedData = $request->validate($rules);
         }
 
-
-        $advanced = AdvanceSalary::where('employee_id', $request->employee_id)
-            ->whereDate('date', 'LIKE',  $getYm . '%')
-            ->get();
-
-        if ($advanced->isEmpty()) {
-            $validatedData = $request->validate($rules);
-            AdvanceSalary::create($validatedData);
+        if ($this->advanceSalaryService->advanceSalaryByIdAndDate($request->employee_id, $getYm)->isEmpty()) {
+            $this->advanceSalaryService->advanceSalaryCreate($request);
 
             return Redirect::route('advance-salary.create')->with('success', 'Advance Salary Paid Successfully!');
         } else {
@@ -101,13 +89,8 @@ class AdvanceSalaryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AdvanceSalary $advanceSalary)
+    public function update(AdvanceSalaryRequest $request, AdvanceSalary $advanceSalary)
     {
-        $rules = [
-            'employee_id' => 'required',
-            'date' => 'required|date_format:Y-m-d|max:10|',
-            'advance_salary' => 'required|numeric'
-        ];
 
         // format date only shows the YM (year and month)
         $newYm = Carbon::createFromFormat('Y-m-d', $request->date)->format('Y-m');
