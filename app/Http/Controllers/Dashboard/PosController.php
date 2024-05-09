@@ -72,35 +72,35 @@ class PosController extends Controller
     //     return Redirect::back()->with('success', 'Cart has been deleted!');
     // }
 
-    // public function createInvoice(Request $request)
-    // {
-    //     $rules = [
-    //         'customer_id' => 'required'
-    //     ];
+    public function createInvoice(Request $request)
+    {
+        $rules = [
+            'customer_id' => 'required'
+        ];
 
-    //     $validatedData = $request->validate($rules);
-    //     $customer = Customer::where('id', $validatedData['customer_id'])->first();
-    //     $content = Cart::content();
+        $validatedData = $request->validate($rules);
+        $customer = Customer::where('id', $validatedData['customer_id'])->first();
+        $content = Cart::content();
 
-    //     return view('pos.create-invoice', [
-    //         'customer' => $customer,
-    //         'content' => $content
-    //     ]);
-    // }
+        return view('pos.create-invoice', [
+            'customer' => $customer,
+            'content' => $content
+        ]);
+    }
 
-    // public function printInvoice(Request $request)
-    // {
-    //     $rules = [
-    //         'customer_id' => 'required'
-    //     ];
+    public function printInvoice(Request $request)
+    {
+        $rules = [
+            'customer_id' => 'required'
+        ];
 
-    //     $validatedData = $request->validate($rules);
-    //     $customer = Customer::where('id', $validatedData['customer_id'])->first();
-    //     $content = Cart::content();
+        $validatedData = $request->validate($rules);
+        $customer = Customer::where('id', $validatedData['customer_id'])->first();
+        $content = Cart::content();
 
-    //     return view('pos.print-invoice', [
-    //         'customer' => $customer,
-    //         'content' => $content
-    //     ]);
-    // }
+        return view('pos.print-invoice', [
+            'customer' => $customer,
+            'content' => $content
+        ]);
+    }
 }

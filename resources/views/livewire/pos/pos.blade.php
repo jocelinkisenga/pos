@@ -47,7 +47,10 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->subtotal }}</td>
                         <td>
-                            <a href="{{ route('pos.deleteCart', $item->rowId) }}" class="btn btn-danger border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa-solid fa-trash mr-0"></i></a>
+
+                                                            <button wire:click.prevent="deleteCart('{{ $item->rowId }}')" class="btn btn-danger border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa-solid fa-trash mr-0"></i></button>
+
+
                         </td>
                     </tr>
                     @endforeach
@@ -79,7 +82,7 @@
                                 <option selected="" disabled="">-- Select Customer --</option>
                                     @empty($customers)
                                     @else
-                                                                    @foreach ($customers as $customer)
+                                    @foreach ($customers as $customer)
                                     <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                                 @endforeach
                                     @endempty
@@ -159,7 +162,7 @@
                                             <input type="hidden"  value="{{ $product->product_name }}">
                                             <input type="hidden" value="{{ $product->selling_price }}">
 
-                                            <button  wire:click.prevent=" addCart({{ $product->id }},'.{{ $product->product_name }}.',{{ $product->selling_price }}) " class="btn btn-primary border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add"><i class="far fa-plus mr-0"></i></button>
+                                            <button  wire:click.prevent="addCart({{ $product->id }},'{{ $product->product_name }}',{{ $product->selling_price }}) " class="btn btn-primary border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add"><i class="far fa-plus mr-0"></i></button>
                                         </form>
                                     </td>
                                 </tr>
