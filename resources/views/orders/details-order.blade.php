@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Information Order Details</h4>
+                        <h4 class="card-title">Information details de la commande</h4>
                     </div>
                 </div>
 
@@ -26,35 +26,35 @@
 
                     <div class="row align-items-center">
                         <div class="form-group col-md-12">
-                            <label>Customer Name</label>
+                            <label>nom client</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->customer->name }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Customer Email</label>
+                            <label>Email client</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->customer->email }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Customer Phone</label>
+                            <label>telephone</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->customer->phone }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Order Date</label>
+                            <label>date de commande</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->order_date }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Order Invoice</label>
+                            <label>facture de la commande</label>
                             <input class="form-control bg-white" id="buying_date" value="{{ $order->invoice_no }}" readonly/>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Payment Status</label>
+                            <label>Statut de paiement</label>
                             <input class="form-control bg-white" id="expire_date" value="{{ $order->payment_status }}" readonly />
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Paid Amount</label>
+                            <label>Montant payé</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->pay }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Due Amount</label>
+                            <label>Montant dû</label>
                             <input type="text" class="form-control bg-white" value="{{ $order->due }}" readonly>
                         </div>
                     </div>
@@ -68,9 +68,9 @@
                                         @method('put')
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $order->id }}">
-                                        <button type="submit" class="btn btn-success mr-2 border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Complete">Complete Order</button>
+                                        <button type="submit" class="btn btn-success mr-2 border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Complete">Completer la commande</button>
 
-                                        <a class="btn btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel" href="{{ route('order.pendingOrders') }}">Cancel</a>
+                                        <a class="btn btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel" href="{{ route('order.pendingOrders') }}">Annuler</a>
                                     </form>
                                 </div>
                             </div>
@@ -89,10 +89,10 @@
                         <tr class="ligth ligth-data">
                             <th>No.</th>
                             <th>Photo</th>
-                            <th>Product Name</th>
-                            <th>Product Code</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th>Nom produit</th>
+                            <th>Code Produit</th>
+                            <th>Quantité</th>
+                            <th>Prix</th>
                             <th>Total(+vat)</th>
                         </tr>
                     </thead>

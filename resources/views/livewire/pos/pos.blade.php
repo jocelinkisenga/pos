@@ -12,7 +12,7 @@
                 </div>
             @endif
             <div>
-                <h4 class="mb-3">Point of Sale</h4>
+                <h4 class="mb-3">Point de vente</h4>
             </div>
         </div>
 
@@ -20,10 +20,10 @@
             <table class="table">
                 <thead>
                     <tr class="ligth">
-                        <th scope="col">Name</th>
-                        <th scope="col">QTY</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">SubTotal</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">QTé</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Sous-Total</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -79,7 +79,7 @@
                     <div class="col-md-12">
                         <div class="input-group">
                             <select class="form-control" id="customer_id" name="customer_id">
-                                <option selected="" disabled="">-- Select Customer --</option>
+                                <option selected="" disabled="">-- Select client --</option>
                                     @empty($customers)
                                     @else
                                     @foreach ($customers as $customer)
@@ -96,8 +96,8 @@
                     </div>
                     <div class="col-md-12 mt-4">
                         <div class="d-flex flex-wrap align-items-center justify-content-center">
-                            <a href="{{ route('customers.create') }}" class="btn btn-primary add-list mx-1">Add Customer</a>
-                            <button type="submit" class="btn btn-success add-list mx-1">Create Invoice</button>
+                            <a href="{{ route('customers.create') }}" class="btn btn-primary add-list mx-1">ajouter un client</a>
+                            <button type="submit" class="btn btn-success add-list mx-1">Créer facture</button>
                         </div>
                     </div>
                 </div>

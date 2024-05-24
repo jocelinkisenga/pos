@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "482bea5446e28aa2f88c0d7fb4c46955",
+    "content-hash": "8e5881b51a9544dd49c187ccc87844f5",
     "packages": [
         {
             "name": "brick/math",
@@ -4551,6 +4551,70 @@
                 }
             ],
             "time": "2023-12-25T11:46:58+00:00"
+        },
+        {
+            "name": "stefro/laravel-lang-country",
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefro/laravel-lang-country.git",
+                "reference": "9007ebfa101e32eea6de24a5a36ef3d653b65736"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefro/laravel-lang-country/zipball/9007ebfa101e32eea6de24a5a36ef3d653b65736",
+                "reference": "9007ebfa101e32eea6de24a5a36ef3d653b65736",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0|^11.0",
+                "php": "^8.1|^8.2"
+            },
+            "require-dev": {
+                "barryvdh/laravel-ide-helper": "^2.13|^3.0",
+                "friendsofphp/php-cs-fixer": "^3.22",
+                "orchestra/testbench": "^7.0|^8.0|^9.0",
+                "pestphp/pest": "^1.21 | ^2.0",
+                "pestphp/pest-plugin-type-coverage": "^2.0",
+                "spatie/laravel-ray": "^1.32"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stefro\\LaravelLangCountry\\LaravelLangCountryServiceProvider"
+                    ],
+                    "aliases": {
+                        "LangCountry": "Stefro\\LaravelLangCountry\\LangCountryFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stefro\\LaravelLangCountry\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stef Rouschop",
+                    "email": "github@rouschop.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Setting the locale is not enough most of the time, some countries use more than one languages. Also, different countries use different date notation formats, names, flags and currencies. This package is here to help you with that!",
+            "homepage": "https://github.com/stefro/laravel-lang-country",
+            "keywords": [
+                "LaravelLangCountry"
+            ],
+            "support": {
+                "issues": "https://github.com/stefro/laravel-lang-country/issues",
+                "source": "https://github.com/stefro/laravel-lang-country/tree/3.3.2"
+            },
+            "time": "2024-04-04T06:17:59+00:00"
         },
         {
             "name": "symfony/console",
