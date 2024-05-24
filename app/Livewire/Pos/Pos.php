@@ -67,11 +67,12 @@ class Pos extends Component
         return Redirect::back()->with('success', 'Cart has been updated!');
     }
 
-    public function deleteCart(String $rowId)
+    public function deleteCart(string $rowId)
     {
+        dd($rowId);
         Cart::remove($rowId);
 
-        return Redirect::back()->with('success', 'Cart has been deleted!');
+       
     }
 
     public function createInvoice(Request $request)
