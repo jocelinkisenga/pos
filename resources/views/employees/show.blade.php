@@ -25,9 +25,9 @@
                         </div>
                         <div class="ml-3">
                             <h4 class="mb-1">{{ $employee->name }}</h4>
-                            <p class="mb-2">UI/UX Designer</p>
-                            <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-primary font-size-14">Edit</a>
-                            <a href="{{ route('employees.index') }}" class="btn btn-danger font-size-14">Back</a>
+                            <p class="mb-2"></p>
+                            <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-primary font-size-14">Editer</a>
+                            <a href="{{ route('employees.index') }}" class="btn btn-danger font-size-14">retour</a>
                         </div>
                     </div>
                     <ul class="list-inline p-0 m-0">
@@ -67,7 +67,7 @@
             <div class="card card-block card-stretch mb-0">
                 <div class="card-header px-3">
                     <div class="header-title">
-                        <h4 class="card-title">Employee Information</h4>
+                        <h4 class="card-title">Information sur l'employé</h4>
                     </div>
                 </div>
                 <div class="card-body p-3">
@@ -75,7 +75,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Name</label>
+                                    <label class="col-form-label">Nom</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $employee->name }}" readonly>
@@ -95,7 +95,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Phone</label>
+                                    <label class="col-form-label">Téléphone</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $employee->phone }}" readonly>
@@ -116,7 +116,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Salary</label>
+                                    <label class="col-form-label">Salaire</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="${{ $employee->salary }}" readonly>
@@ -126,7 +126,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Vacation</label>
+                                    <label class="col-form-label">role</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $employee->vacation }}" readonly>
@@ -136,7 +136,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">City</label>
+                                    <label class="col-form-label">Cité</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $employee->city }}" readonly>
@@ -146,7 +146,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Address</label>
+                                    <label class="col-form-label">Adresse</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <textarea class="form-control bg-white" readonly>{{ $employee->address }}</textarea>

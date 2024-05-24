@@ -22,14 +22,13 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Product List</h4>
-                    <p class="mb-0">A product dashboard lets you easily gather and visualize product data from optimizing <br>
-                        the product experience, ensuring product retention. </p>
+                    <h4 class="mb-3">Liste des produits</h4>
+                    <p class="mb-0"></p>
                 </div>
                 <div>
-                <a href="{{ route('products.importView') }}" class="btn btn-success add-list">Import</a>
-                <a href="{{ route('products.exportData') }}" class="btn btn-warning add-list">Export</a>
-                <a href="{{ route('products.create') }}" class="btn btn-primary add-list">Add Product</a>
+                <a href="{{ route('products.importView') }}" class="btn btn-success add-list">Importer</a>
+                <a href="{{ route('products.exportData') }}" class="btn btn-warning add-list">Exporter</a>
+                <a href="{{ route('products.create') }}" class="btn btn-primary add-list">Ajouter un produit</a>
                 </div>
             </div>
         </div>
@@ -50,7 +49,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">recherche:</label>
                         <div class="input-group col-sm-8">
                             <input type="text" id="search" class="form-control" name="search" placeholder="Search product" value="{{ request('search') }}">
                             <div class="input-group-append">
@@ -70,11 +69,11 @@
                         <tr class="ligth ligth-data">
                             <th>No.</th>
                             <th>Photo</th>
-                            <th>@sortablelink('product_name', 'name')</th>
-                            <th>@sortablelink('category.name', 'category')</th>
-                            <th>@sortablelink('supplier.name', 'supplier')</th>
-                            <th>@sortablelink('selling_price', 'price')</th>
-                            <th>Status</th>
+                            <th>@sortablelink('product_name', 'nom')</th>
+                            <th>@sortablelink('category.name', 'categorie')</th>
+                            <th>@sortablelink('supplier.name', 'fournisseur')</th>
+                            <th>@sortablelink('selling_price', 'prix')</th>
+                            <th>Statut</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -91,9 +90,9 @@
                             <td>{{ $product->selling_price }}</td>
                             <td>
                                 @if ($product->expire_date > Carbon\Carbon::now()->format('Y-m-d'))
-                                    <span class="badge rounded-pill bg-success">Valid</span>
+                                    <span class="badge rounded-pill bg-success">Valide</span>
                                 @else
-                                    <span class="badge rounded-pill bg-danger">Invalid</span>
+                                    <span class="badge rounded-pill bg-danger">Invalide</span>
                                 @endif
                             </td>
                             <td>
@@ -115,7 +114,7 @@
 
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Aucun produit trouvé.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>

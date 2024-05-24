@@ -14,13 +14,12 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Employee List</h4>
-                    <p class="mb-0">A employee dashboard lets you easily gather and visualize employee data from optimizing <br>
-                        the employee experience, ensuring employee retention. </p>
+                    <h4 class="mb-3">Liste des employés</h4>
+                    <p class="mb-0"></p>
                 </div>
                 <div>
-                <a href="{{ route('employees.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-plus mr-3"></i>Add Employee</a>
-                <a href="{{ route('employees.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
+                <a href="{{ route('employees.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-plus mr-3"></i>Ajouter un employé</a>
+                <a href="{{ route('employees.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Effacer la recherche</a>
                 </div>
             </div>
         </div>
@@ -41,7 +40,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">recherche:</label>
                         <div class="col-sm-8">
                             <div class="input-group">
                                 <input type="text" id="search" class="form-control" name="search" placeholder="Search employee" value="{{ request('search') }}">
@@ -63,11 +62,11 @@
                         <tr class="ligth ligth-data">
                             <th>No.</th>
                             <th>Photo</th>
-                            <th>@sortablelink('name')</th>
-                            <th>@sortablelink('email')</th>
-                            <th>@sortablelink('phone')</th>
-                            <th>@sortablelink('salary')</th>
-                            <th>@sortablelink('city')</th>
+                            <th>@sortablelink('name','nom')</th>
+                            <th>@sortablelink('email', )</th>
+                            <th>@sortablelink('phone','telephone')</th>
+                            <th>@sortablelink('salary','salaire')</th>
+                            <th>@sortablelink('city','cité')</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -102,7 +101,7 @@
 
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Aucun employé trouvé.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>

@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Import Product</h4>
+                        <h4 class="card-title">Importer un Produit</h4>
                     </div>
                 </div>
 
@@ -18,7 +18,7 @@
                             <div class="input-group mb-4 col-lg-6">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input @error('upload_file') is-invalid @enderror" id="upload_file" name="upload_file" onchange="showFileName();">
-                                    <label class="custom-file-label" for="upload_file" id="label_input">Choose file (.xls / .xlsx)</label>
+                                    <label class="custom-file-label" for="upload_file" id="label_input">Choisir une photo (.xls / .xlsx)</label>
                                 </div>
                                 @error('upload_file')
                                 <div class="invalid-feedback">
@@ -29,8 +29,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Import</button>
-                            <a class="btn bg-danger" href="{{ route('products.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Importer</button>
+                            <a class="btn bg-danger" href="{{ route('products.index') }}">Annuler</a>
                         </div>
                     </form>
                 </div>
