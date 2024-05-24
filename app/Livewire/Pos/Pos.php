@@ -69,10 +69,10 @@ class Pos extends Component
 
     public function deleteCart(string $rowId)
     {
-        dd($rowId);
+        // dd($rowId);
         Cart::remove($rowId);
 
-       
+
     }
 
     public function createInvoice(Request $request)
