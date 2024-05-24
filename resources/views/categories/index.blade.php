@@ -14,13 +14,12 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Category List</h4>
-                    <p class="mb-0">A Category dashboard lets you easily gather and visualize Category data from optimizing <br>
-                        the Category experience, ensuring Category retention. </p>
+                    <h4 class="mb-3">Liste des catégories</h4>
+                    <p class="mb-0"></p>
                 </div>
                 <div>
                 <a href="{{ route('categories.create') }}" class="btn btn-primary add-list"><i class="fas fa-plus mr-3"></i>Create Category</a>
-                <a href="{{ route('categories.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Effacer la recherche</a>
                 </div>
             </div>
         </div>
@@ -41,7 +40,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">Recherche:</label>
                         <div class="col-sm-8">
                             <div class="input-group">
                                 <input type="text" id="search" class="form-control" name="search" placeholder="Search category" value="{{ request('search') }}">
@@ -61,7 +60,7 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>@sortablelink('name')</th>
+                            <th>@sortablelink('name', 'nom')</th>
                             <th>@sortablelink('slug')</th>
                             <th>Action</th>
                         </tr>

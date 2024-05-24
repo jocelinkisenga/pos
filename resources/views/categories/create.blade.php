@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Create Category</h4>
+                        <h4 class="card-title">Créer la Categorie</h4>
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-12">
-                                <label for="name">Category Name <span class="text-danger">*</span></label>
+                                <label for="name">Nom Catégorie <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -26,7 +26,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-12">
-                                <label for="slug">Category Slug <span class="text-danger">*</span></label>
+                                <label for="slug">Categorie Slug <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug') }}" required readonly>
                                 @error('slug')
                                 <div class="invalid-feedback">
@@ -37,8 +37,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <a class="btn bg-danger" href="{{ route('categories.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Enregistrer</button>
+                            <a class="btn bg-danger" href="{{ route('categories.index') }}">Annuler</a>
                         </div>
                     </form>
                 </div>

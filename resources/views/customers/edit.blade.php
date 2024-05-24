@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit Customer</h4>
+                        <h4 class="card-title">Editer le Client</h4>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="name">Customer Name <span class="text-danger">*</span></label>
+                                <label for="name"> Nom <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $customer->name) }}" required>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="shopname">Shop Name <span class="text-danger">*</span></label>
+                                <label for="shopname">Nom du Magazin <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('shopname') is-invalid @enderror" id="shopname" name="shopname" value="{{ old('shopname', $customer->shopname) }}" required>
                                 @error('shopname')
                                 <div class="invalid-feedback">
@@ -61,7 +61,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email">Customer Email <span class="text-danger">*</span></label>
+                                <label for="email"> Email <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $customer->email) }}" required>
                                 @error('email')
                                 <div class="invalid-feedback">
@@ -70,7 +70,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Customer Phone <span class="text-danger">*</span></label>
+                                <label for="phone"> Téléphone <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" required>
                                 @error('phone')
                                 <div class="invalid-feedback">
