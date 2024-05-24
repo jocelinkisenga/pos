@@ -14,10 +14,10 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Commandes en cours</h4>
+                    <h4 class="mb-3">Pending Order List</h4>
                 </div>
                 <div>
-                    <a href="{{ route('order.pendingOrders') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Effacer la recheche</a>
+                    <a href="{{ route('order.pendingOrders') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">recherche:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
                         <div class="col-sm-8">
                             <div class="input-group">
                                 <input type="text" id="search" class="form-control" name="search" placeholder="Search order" value="{{ request('search') }}">
@@ -58,12 +58,12 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>N° facture</th>
-                            <th>@sortablelink('customer.name', 'nom')</th>
-                            <th>@sortablelink('order_date', 'N° commande')</th>
-                            <th>paiement</th>
+                            <th>Invoice No</th>
+                            <th>@sortablelink('customer.name', 'name')</th>
+                            <th>@sortablelink('order_date', 'order date')</th>
+                            <th>Payment</th>
                             <th>@sortablelink('total')</th>
-                            <th>Statut</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
