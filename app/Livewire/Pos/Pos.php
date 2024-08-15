@@ -51,7 +51,7 @@ class Pos extends Component
             'options' => ['size' => 'large']
         ]);
 
-        //return Redirect::back()->with('success', 'Product has been added!');
+        
     }
 
         public function updateCart(Request $request, $rowId)
@@ -69,7 +69,7 @@ class Pos extends Component
 
     public function deleteCart(string $rowId)
     {
-        // dd($rowId);
+        
         Cart::remove($rowId);
 
 
